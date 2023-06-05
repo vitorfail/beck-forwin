@@ -1,0 +1,4 @@
+DATABASE_URL = 'postgres://lpjtijhc:PV441r-_G0O3diBvUeJzUnJMz1hB0tpX@silly.db.elephantsql.com/lpjtijhc'
+DIALECT = 'postgres'
+PRIVATE_KEY = 'nothing'
+TOKEN_TIME = '10m'
