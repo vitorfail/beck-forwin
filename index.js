@@ -30,9 +30,6 @@ app.use(function(req, res, next) {
 });
 app.use(express.json({ extended: false }))
 
-app.use('/api/financeiro', financeiro)
-app.use('/api/atualizar_cadastro', atualizar_cadastro)
-app.use('/api/home', home)
 app.use('/api/planilhas', planilhas)
 app.use('/api/cadastrar_cliente', cadastro_cliente)
 app.use('/api/login_cadastro', login_cadastro)
