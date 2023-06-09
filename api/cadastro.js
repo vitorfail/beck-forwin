@@ -1,38 +1,32 @@
 const tabelas = require('../tabelas.js')
 const md5 = require('md5');
-const expres = require('express');
-const rout = expres.Router(); 
 
-async function criar(user, pass){
+module.exports = async function criar(username, password, email, cnpj, nome, endereco, municipio, uf, tema){
     var result = await tabelas.tabela_user.findAll({
         where:{
-            username:(user)
+            username:(username)
         }
     })
     if(result.length === 0){
         try{
             tabelas.tabela_user.create({
-                username:(user),
-                password:(md5(pass)),
+                username: (username),
+                password: (md5(password)),
+                email: (email),
+                cnpj: (cnpj),
+                nome: (nome),
+                endereco: (endereco),
+                municipio: (municipio),
+                uf: (uf),
+                tema: (tema),
             })
-            return 1;
+            return '1';
         }
         catch(error){
-            return 2;
+            return '2';
         }
     }
     else{
         return 'EXIST';
     }
-};
-
-rout.post('/', async (req, res) =>{
-    try{
-        var resultado = await criar(req.body.user, req.body.pass)
-        res.status(200).send(JSON.stringify({resultado}))
-    }
-    catch(error){
-        res.status(200).send(null)
-    }
-})
-module.exports = rout;
+}

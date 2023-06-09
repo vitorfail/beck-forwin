@@ -19,20 +19,28 @@ const Users = database.define('Users', {
         type: Sequelize.STRING,
         defaultValue: '0'
     },
+    email:{
+        type: Sequelize.STRING,
+    },
     cnpj:{
         type: Sequelize.STRING,
+        defaultValue: ''
     },
     nome:{
         type: Sequelize.STRING,
+        defaultValue: ''
     },
     endereco:{
         type: Sequelize.STRING,
+        defaultValue: ''
     },
     municipio:{
         type: Sequelize.STRING,
+        defaultValue: ''
     },
     uf:{
         type: Sequelize.STRING,
+        defaultValue: ''
     },
     tema:{
         type: Sequelize.STRING,
