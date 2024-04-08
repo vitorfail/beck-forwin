@@ -1,4 +1,7 @@
 const table = require('../tabelas.js') 
+const express = require('express');
+const router = express.Router();
+
 var jwt = require('jsonwebtoken');
 require('dotenv').config(); 
 
@@ -26,7 +29,7 @@ async function Politicasprivacidade(req){
     }
 }
 
-router2.post('/', async (req, res) =>{
+router.post('/', async (req, res) =>{
     try{
         var checando = await Check(req)
         if(checando == true){
@@ -41,4 +44,4 @@ router2.post('/', async (req, res) =>{
         res.status(200).send(null)
     }
 })
-module.exports = router2;
+module.exports = router;
