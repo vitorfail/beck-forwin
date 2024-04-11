@@ -12,8 +12,7 @@ async function login(req){
     return JSON.stringify({data:token})
 }
 async function cadastro(req){
-    var cadastro = api_cadastro(req.body.username, req.body.password, req.body.email, 
-        req.body.cnpj, req.body.nome, req.body.endereco, req.body.municipio, req.body.uf, req.body.tema)
+    var cadastro = api_cadastro(req.body.username, req.body.password, req.body.email)
     return JSON.stringify({data:cadastro})
 }
 
